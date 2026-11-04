@@ -74,9 +74,7 @@ docker images
 **실행 결과**
 <img width="1514" height="182" alt="docker img" src="https://github.com/user-attachments/assets/1bd5db71-36ff-4a0b-b514-b3f5c1e0ef02" />
 
-
 컨테이너 목록 확인
-
 
 **실행 명령어**
 ```shell
@@ -85,7 +83,6 @@ docker ps
 
 **실행 결과**
 <img width="1671" height="114" alt="image" src="https://github.com/user-attachments/assets/ba5d6743-abab-4e7c-8035-4d869b44b934" />
-
 
 로그 확인
 
@@ -96,6 +93,39 @@ docker logs [컨테이너 이름]
 
 **실행 결과**
 <img width="1529" height="1514" alt="logs" src="https://github.com/user-attachments/assets/dade8943-3cd5-4912-84bb-5e33960a591d" />
+
+
+### 4.5 컨테이너 실행 실습
+
+**hello-world 실행 결과**
+<img width="1547" height="1047" alt="helloworld" src="https://github.com/user-attachments/assets/0b48acc5-daeb-418b-bac4-bec2d32a605d" />
+
+**ubuntu 컨테이너 실행**
+```shell
+docker run -it --name [컨테이너 이름] ubuntu
+ls
+echo "hello from container"
+cat /etc/os-release
+```
+
+**ubuntu 컨테이너 실행 결과**
+<img width="1389" height="1116" alt="container" src="https://github.com/user-attachments/assets/bad9305e-641e-4a78-b97a-07e8132b4a06" />
+
+**컨테이너 종료/유지의 차이 정리**
+
+exit로 나오면 컨테이너가 멈춘 것을 확인할 수 있다.
+<img width="2165" height="146" alt="exit" src="https://github.com/user-attachments/assets/403ceb82-8afc-4254-afaf-c7b1e59fd18c" />
+
+반면 exec를 사용해서 들어갔다 나오면 여전히 컨테이너가 동작하는걸 확인할 수 있다.
+<img width="2081" height="520" alt="exec" src="https://github.com/user-attachments/assets/446504d5-27ef-4fa8-ac68-3436c7f83887" />
+
+컨테이너 중단 위험을 피하기 위해선 exec를 사용해서 터미널에 진입하는 것이 좋다.
+
+### 4.6 Dockerfile 작성 및 커스텀 이미지 빌드
+
+
+
+
 
 
 
