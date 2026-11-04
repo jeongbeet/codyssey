@@ -123,6 +123,54 @@ exit로 나오면 컨테이너가 멈춘 것을 확인할 수 있다.
 
 ### 4.6 Dockerfile 작성 및 커스텀 이미지 빌드
 
+웹 서버 베이스 이미지(nginx)를 활용한 커스텀 이미지 생성
+선택의 이유는 내가 만든 HTML 웹 페이지를 가볍고 쉽게 띄우기에 Nginx가 가장 적합해서 선택함.
+
+```html
+<!-- index.html -->
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8"><title>My First Container</title></head>
+<body>
+  <h1>안녕하세요, 홍길동입니다</h1>
+  <p>이 페이지는 Docker 컨테이너 안에서 실행되고 있습니다.</p>
+</body>
+</html>
+```
+
+```docker
+#Dockerfile
+FROM nginx (베이스 이미지 정의)
+COPY index.html /usr/share/nginx/html/index.html (nginx의 기본 index.html을 내가 만든 index.html로 덮어 씌움)
+```
+
+**index.html과 Dockerfile을 사용한 nginx를 베이스로 한 커스텀 이미지 제작**
+
+```shell
+# 커스텀 이미지 제작
+docker build -t my-web . (.은 현재 폴더의 Dockerfile을 사용해서 이미지를 제작)
+
+# 포트를 연결해서 컨테이너 실행
+docker run -d -p 8080:80 --name my-web my-web (내 컴퓨터 8080번 포트 -> 컨테이너 80번 포트)
+
+# Docker 상태 확인
+docker ps
+```
+
+**이미지 빌드 성공 및 컨테이너 실행 성공**
+<img width="904" height="1157" alt="docker image" src="https://github.com/user-attachments/assets/f8da8198-3899-4319-a383-0208e162a384" />
+<img width="2084" height="205" alt="docker run" src="https://github.com/user-attachments/assets/fdafa461-4fb8-4ea0-a442-9f2561668c18" />
+
+### 4.7 포트 매핑 및 웹 접속 확인
+
+**정상적으로 작동하는 것을 확인**
+<img width="782" height="496" alt="image" src="https://github.com/user-attachments/assets/c010fc00-6e59-401b-87d4-f976f34f1d99" />
+
+### 4.8 Docker 볼륨 영속성 검증
+
+
+### 4.9 Git 설정 및 GitHub 연동
+
 
 
 
