@@ -49,6 +49,57 @@ Docker version 29.9.2, build a82e528
 ```
 
 **캡처**
-![Docker version 확인](<img width="702" height="84" alt="version" src="https://github.com/user-attachments/assets/012334f1-b637-4734-a47d-3f08aabd801c" />)
+<img width="702" height="84" alt="Image" src="https://github.com/user-attachments/assets/04c9243a-c612-4956-b07b-422b40614ecf" />
+
+Docker 동작 확인 실행
+
+**실행 명령어**
+```shell
+docker info
+```
+
+**실행 결과**
+<img width="1457" height="1607" alt="info" src="https://github.com/user-attachments/assets/4ef5f406-dc66-4401-abbe-27566c690b77" />
+
+### 4.4 Docker 기본 운영 명령 수행
+
+이미지 목록 확인
+
+
+**실행 명령어**
+```shell
+docker images
+```
+
+**실행 결과**
+<img width="1514" height="182" alt="docker img" src="https://github.com/user-attachments/assets/1bd5db71-36ff-4a0b-b514-b3f5c1e0ef02" />
+
+
+컨테이너 목록 확인
+
+
+**실행 명령어**
+```shell
+docker ps
+```
+
+**실행 결과**
+<img width="1671" height="114" alt="image" src="https://github.com/user-attachments/assets/ba5d6743-abab-4e7c-8035-4d869b44b934" />
+
+
+로그 확인
+
+**실행 명령어**
+```shell
+docker logs [컨테이너 이름]
+```
+
+**실행 결과**
+<img width="1529" height="1514" alt="logs" src="https://github.com/user-attachments/assets/dade8943-3cd5-4912-84bb-5e33960a591d" />
+
+
+
+
+
 
 
