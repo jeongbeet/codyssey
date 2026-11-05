@@ -88,6 +88,7 @@ Docker version 29.9.2, build a82e528
 ```
 
 **캡처**
+
 <img width="702" height="84" alt="Image" src="https://github.com/user-attachments/assets/04c9243a-c612-4956-b07b-422b40614ecf" />
 
 Docker 동작 확인 실행
@@ -203,6 +204,7 @@ docker ps
 ### 4.7 포트 매핑 및 웹 접속 확인
 
 **정상적으로 작동하는 것을 확인**
+
 <img width="782" height="496" alt="image" src="https://github.com/user-attachments/assets/c010fc00-6e59-401b-87d4-f976f34f1d99" />
 
 ### 4.8 Docker 볼륨 영속성 검증
@@ -231,6 +233,7 @@ docker run -it --rm -v mydata:/data ubuntu cat /data/memo.txt (기존 볼륨을 
 ```
 
 **실행 결과**
+
 <img width="810" height="74" alt="컨테이너 삭제" src="https://github.com/user-attachments/assets/a6f6cf24-6a21-4a4c-8878-7595ac287a53" />
 
 <img width="1394" height="108" alt="새 컨테이너 확인" src="https://github.com/user-attachments/assets/a23f6aa0-7bd9-4d05-9c84-da1fe44b80f2" />
@@ -244,6 +247,7 @@ docker volume ls
 
 
 **실행 결과**
+
 <img width="773" height="109" alt="볼륨 목록 확인" src="https://github.com/user-attachments/assets/2964b35a-d8b9-4a1d-9da4-e48f609594c6" />
 
 데이터가 유지되고 mydata 볼륨이 존재하는 걸 확인하였으므로 볼륨 영속성을 검증함.
@@ -265,6 +269,7 @@ git config --list
 ```
 
 **설정 결과**
+
 <img width="693" height="472" alt="git" src="https://github.com/user-attachments/assets/f4b6ee64-c79b-4aa1-beb6-8b71503c1e24" />
 
 **GitHub 로그인 및 저장소 연동**
@@ -289,6 +294,7 @@ git remote -v
 ```
 
 **실행 결과**
+
 <img width="1916" height="265" alt="image" src="https://github.com/user-attachments/assets/a90bb3d2-c76c-4aee-8727-95cf66b00ea8" />
 
 업로드할 파일을 선택 후 커밋
