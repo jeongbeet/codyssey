@@ -15,14 +15,14 @@
 
 - [ ] 터미널 기본 조작 및 폴더 구성
 - [ ] 파일 및 디렉터리 권한 실습
-- [ ] Docker 설치 및 동작 점검
-- [ ] Docker 기본 운영 명령 수행
-- [ ] 컨테이너 실행 실습
-- [ ] Dockerfile 작성 및 커스텀 이미지 빌드
-- [ ] 포트 매핑 및 웹 접속 확인
-- [ ] Docker 볼륨 영속성 검증
-- [ ] Git 설정 및 GitHub 연동
-- [ ] 보안 및 개인정보 점검
+- [x] Docker 설치 및 동작 점검
+- [x] Docker 기본 운영 명령 수행
+- [x] 컨테이너 실행 실습
+- [x] Dockerfile 작성 및 커스텀 이미지 빌드
+- [x] 포트 매핑 및 웹 접속 확인
+- [x] Docker 볼륨 영속성 검증
+- [] Git 설정 및 GitHub 연동
+- [x] 보안 및 개인정보 점검
 
 ## 4. 실습 수행
 
@@ -30,6 +30,9 @@
 
 
 ### 4.2 파일 및 디렉터리 권한 실습
+
+
+
 
 
 ### 4.3 Docker 설치 및 기본 점검
@@ -168,8 +171,72 @@ docker ps
 
 ### 4.8 Docker 볼륨 영속성 검증
 
+**볼륨 만들기 및 볼륨을 연결한 컨테이너 실행**
+```bash
+docker volume create mydata
+docker run -it --name vol-test -v mydata:/data ubuntu
+```
+
+**실행 결과**
+<img width="1385" height="155" alt="볼륨" src="https://github.com/user-attachments/assets/b9f612c1-b1d8-4a13-862b-70e11022f3ac" />
+
+**컨테이너 안에서 파일을 생성**
+```bash
+echo "hello volume" > /data/memo.txt (hello volume이라는 문장을 /data/memo.txt에 저장. /data에는 볼륨이 연결되어 있으므로, 이 파일은 mydata 볼륨에 저장됨.)
+```
+
+**실행 결과**
+<img width="1091" height="36" alt="file" src="https://github.com/user-attachments/assets/784d32db-6b12-4bdb-b19c-576a52307b33" />
+
+**컨테이너 삭제 후 새 컨테이너에서 파일 확인**
+```bash
+docker rm vol-test
+docker run -it --rm -v mydata:/data ubuntu cat /data/memo.txt (기존 볼륨을 새 컨테이너의 /data에 연결 후 memo.txt의 파일 내용을 출력)
+```
+
+**실행 결과**
+<img width="810" height="74" alt="컨테이너 삭제" src="https://github.com/user-attachments/assets/a6f6cf24-6a21-4a4c-8878-7595ac287a53" />
+
+<img width="1394" height="108" alt="새 컨테이너 확인" src="https://github.com/user-attachments/assets/a23f6aa0-7bd9-4d05-9c84-da1fe44b80f2" />
+정상적으로 hello volume이 출력
+
+
+**볼륨 목록 확인**
+```bash
+docker volume ls
+```
+
+
+**실행 결과**
+<img width="773" height="109" alt="볼륨 목록 확인" src="https://github.com/user-attachments/assets/2964b35a-d8b9-4a1d-9da4-e48f609594c6" />
+
+데이터가 유지되고 mydata 볼륨이 존재하는 걸 확인하였으므로 볼륨 영속성을 검증함.
 
 ### 4.9 Git 설정 및 GitHub 연동
+
+**Git 사용자 정보/기본 브랜치 설정**
+
+```bash
+# YOUR NAME과 EMAIL을 본인 것으로 수정
+git config --global user.name "YOUR NAME"
+git config --global user.email "YOUR EMAIL"
+
+# 기본 브랜치 이름을 main으로 설정
+git config --global init.defaultBranch main
+
+# 설정 확인
+git config --list
+```
+
+**설정 결과**
+<img width="693" height="472" alt="git" src="https://github.com/user-attachments/assets/f4b6ee64-c79b-4aa1-beb6-8b71503c1e24" />
+
+**GitHub 로그인 및 저장소 연동**
+
+```powershell
+git remote add origin https://github.com/내아이디/저장소이름.git
+```
+
 
 
 
