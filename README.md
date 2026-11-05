@@ -13,7 +13,7 @@
 
 ## 3. 수행 체크리스트
 
-- [ ] 터미널 기본 조작 및 폴더 구성
+- [x] 터미널 기본 조작 및 폴더 구성
 - [x] 파일 및 디렉터리 권한 실습
 - [x] Docker 설치 및 동작 점검
 - [x] Docker 기본 운영 명령 수행
@@ -27,6 +27,75 @@
 ## 4. 실습 수행
 
 ### 4.1 터미널 기본 조작 및 폴더 구성
+
+**현재 위치 확인과 목록 확인**
+```bash
+# 현재 위치 확인
+pwd
+
+# 목록 확인 (숨김 파일 포함)
+ls -la
+```
+
+**실행 결과**
+<img width="1183" height="997" alt="image" src="https://github.com/user-attachments/assets/803dcbd5-a798-4bbc-b501-f66f608dd213" />
+
+**이동과 생성**
+
+```bash
+# test라는 디렉터리를 생성
+mkdir test
+# 생성한 test 디렉터리로 이동
+cd test
+# 현재 위치 확인
+pwd
+```
+
+**실행 결과**
+
+<img width="611" height="140" alt="image" src="https://github.com/user-attachments/assets/97482b53-673d-4691-b44e-1bee1fedbc13" />
+
+**파일 생성, 복사, 이동/이름변경, 삭제**
+
+```bash
+# 빈 파일 생성
+touch file.txt
+# Hello를 파일에 저장
+echo "Hello" > file.txt
+# 파일 복사
+cp file.txt copy.txt
+# 파일 이동
+mv copy.txt mydir/
+# 파일 이름변경
+mv file.txt new.txt
+# 파일 삭제
+rm new.txt
+```
+
+**실행 결과**
+- file.txt와 그 복사본인 copy.txt가 만들어진 걸 확인할 수 있다.
+<img width="919" height="184" alt="image" src="https://github.com/user-attachments/assets/69028afa-b217-41d8-8a05-390d41b32922" />
+
+- copy.txt를 mydir로 이동하고 file.txt의 이름을 new.txt로 바꾼 후 삭제한 결과이다.
+<img width="850" height="402" alt="image" src="https://github.com/user-attachments/assets/624b7d7d-40aa-4e36-8396-ae534eeca03d" />
+
+**파일 내용 확인과 빈 파일 생성**
+
+```bash
+# 빈 파일 생성
+touch empty.txt
+# 내용 확인
+cat empty.txt
+# 빈 파일에 내용 넣기
+echo "Hello" > empty.txt
+# 내용 확인
+cat empty.txt
+```
+
+**실행 결과**
+- 빈 파일을 생성한 후 내용을 확인하니 아무것도 없는 게 확인된다. 빈 파일에 내용을 넣고 다시 확인해보면 Hello가 확인된다.
+<img width="968" height="186" alt="image" src="https://github.com/user-attachments/assets/85cfc2c7-5f1b-4935-bbf2-24ef99781ab9" />
+
 
 
 ### 4.2 파일 및 디렉터리 권한 실습
