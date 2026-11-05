@@ -14,7 +14,7 @@
 ## 3. 수행 체크리스트
 
 - [ ] 터미널 기본 조작 및 폴더 구성
-- [ ] 파일 및 디렉터리 권한 실습
+- [x] 파일 및 디렉터리 권한 실습
 - [x] Docker 설치 및 동작 점검
 - [x] Docker 기본 운영 명령 수행
 - [x] 컨테이너 실행 실습
@@ -31,9 +31,45 @@
 
 ### 4.2 파일 및 디렉터리 권한 실습
 
+**권한을 확인/변경하는 명령을 실습해보기 위해 file.txt와 mydir이라는 파일과 디렉토리를 생성**
 
+```shell
+# 컨테이너 안에서 실행
+mkdir temp
+cd temp
 
+# file.txt 생성
+touch file.txt
 
+# mydir 디렉터리 생성
+mkdir mydir
+
+# 변경 전 권한 확인
+ls -l
+```
+
+**변경 전 권한 확인 결과**
+<img width="948" height="304" alt="권한 변경 전" src="https://github.com/user-attachments/assets/ee4b4bd4-fdb0-488f-8f43-3932b8116a2d" />
+
+권한 변경 실행 
+
+```shell
+chmod 600 file.txt
+chmod 700 mydir 
+
+# 권한 변경 후 확인
+ls -l
+```
+
+**변경 후 권한 확인 결과***
+<img width="943" height="222" alt="권한 변경 후" src="https://github.com/user-attachments/assets/0162e5a8-3cd2-4c37-b079-eea8c1f7d267" />
+
+**변경 전 후 권한 해석**
+- 변경 전 file.txt의 권한 -rw-r--r-- / 변경 전: 소유자는 읽기·쓰기, 그룹과 기타 사용자는 읽기 가능
+- 변경 후 file.txt의 권한 -rw------- / 변경 후: 소유자만 읽기·쓰기 가능
+
+- 변경 전 mydir의 권한 drwxr-xr-x / 변경 전: 소유자는 모든 권한을 가지고, 그룹과 기타 사용자는 파일 목록을 보거나 디렉터리에 들어갈 수 있음
+- 변경 후 mydir의 권한 drwx------ / 변경 후: 소유자만 목록 조회, 파일 생성·삭제, 디렉터리 접근 가능
 
 ### 4.3 Docker 설치 및 기본 점검
 
