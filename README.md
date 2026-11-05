@@ -6,10 +6,10 @@
 
 ## 2. 실행 환경
 
-- OS: Windows 11
-- Shell: bash
-- Docker 버전: [실제 버전 작성]
-- Git 버전: [실제 버전 작성]
+- OS: Windows 11, Ubuntu 26.04
+- Shell: powershell, bash
+- Docker 버전: 29.9.2
+- Git 버전: 2.56.0
 
 ## 3. 수행 체크리스트
 
@@ -21,7 +21,7 @@
 - [x] Dockerfile 작성 및 커스텀 이미지 빌드
 - [x] 포트 매핑 및 웹 접속 확인
 - [x] Docker 볼륨 영속성 검증
-- [] Git 설정 및 GitHub 연동
+- [x] Git 설정 및 GitHub 연동
 - [x] 보안 및 개인정보 점검
 
 ## 4. 실습 수행
@@ -233,12 +233,53 @@ git config --list
 
 **GitHub 로그인 및 저장소 연동**
 
+실습 파일을 보관할 폴더로 이동
+
 ```powershell
-git remote add origin https://github.com/내아이디/저장소이름.git
+cd "C:\Users\사용자이름\Documents\실습폴더"
 ```
 
+해당 폴더를 Git 저장소로 초기화
 
+```powershell
+git init
+```
 
+GitHub 저장소를 연결하고 확인
+
+```powershell
+git remote add origin https://github.com/내아이디/저장소이름.git
+git remote -v
+```
+
+**실행 결과**
+<img width="1916" height="265" alt="image" src="https://github.com/user-attachments/assets/a90bb3d2-c76c-4aee-8727-95cf66b00ea8" />
+
+업로드할 파일을 선택 후 커밋
+
+```powershell
+git add . (.은 폴더 안에 있는 모든 파일을 포함)
+git commit -m "원하는 말"
+```
+
+GitHub에 업로드하기
+
+```powershell
+git branch -M main
+git push -u origin main
+```
+
+브라우저가 뜨면 로그인하고 인증
+
+**실행 결과**
+<img width="1196" height="520" alt="d" src="https://github.com/user-attachments/assets/fa601ea8-4751-461c-b137-5318ef7b8ead" />
+
+**업로드 성공 시 결과**
+<img width="1170" height="372" alt="연동성공" src="https://github.com/user-attachments/assets/6ffa1d1d-a0a8-43fa-bed7-7ef8716672e2" />
+
+실제로 연동이 된 모습을 확인할 수 있다.
+
+<img width="1354" height="488" alt="연동성공1" src="https://github.com/user-attachments/assets/84e4cb77-7f02-4c77-8255-e4082c16e050" />
 
 
 
